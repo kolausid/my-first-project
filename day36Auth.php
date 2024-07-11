@@ -2,8 +2,10 @@
 session_start();
 ?>
 <form action="" method="POST">
-    <input name="login">
-    <input name="password" type="password">
+    <label for="login">Введите логин:</label>
+    <input id="login" name="login">
+    <label for="pass">Введите пароль:</label>
+    <input id="pass" name="password" type="password">
     <input type="submit">
 </form>
 
