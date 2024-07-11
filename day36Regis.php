@@ -3,26 +3,35 @@ session_start();
 ?>
 
 <form action="" method="POST">
-    <input name="login" 
+    <label for="login">Введите логин:</label>
+    <input id="login "name="login" 
     value="<?= $_POST['login'] ?? 'login'?>" required>
-    <input name="hb" 
+    <label for="Birthday">Введите дату рождения:</label>
+    <input id="Birthday" name="hb" 
     value="<?= $_POST['hb'] ?? date('Y-m-d', mktime(0, 0, 0, 01, 01, 1970))?>">
-    <input name="email" 
-    value="<?= $_POST['email'] ?? 'login@login.ru'?>">
-    <input name="password" 
+    <label for="email">Введите email:</label>
+    <input id="email" name="email" 
+    value="<?= $_POST['email'] ?? 'login@login.ru'?>"><br><br>
+    <label for="pass">Введите пароль:</label>
+    <input id="pass" name="password" 
     value="<?= $_POST['password'] ?? ''?>" type="password">
-    <input name="confirm" value="<?= $_POST['confirm'] ?? ' '?>" type="password">
-    <input name="name" 
+    <label for="corfirm">Введите еще раз пароль:</label>
+    <input id="confirm" name="confirm" value="<?= $_POST['confirm'] ?? ' '?>" type="password"><br><br>
+    <label for="name">Введите имя:</label>
+    <input id="name" name="name" 
     value="<?= $_POST['name'] ?? 'name'?>">
-    <input name="lName" 
-    value="<?= $_POST['lName'] ?? 'Last name'?>">
-    <select name="country">
+    <label for="lName">Введите фамилию:</label>
+    <input id="lName" name="lName" 
+    value="<?= $_POST['lName'] ?? 'Last name'?>"><br><br>
+    <label for="country">Выберите страну:</label>
+    <select id="country" name="country">
         <option>Russia</option>
         <option>USA</option>
         <option>Japan</option>
         <option>China</option>
     </select>
-    <input type="checkbox" name="admin">
+    <label for="role">Выберите роль(при выборе будет присвоена роль администратора):</label>
+    <input id="role" type="checkbox" name="admin">
     <input type="submit">
 </form>
 

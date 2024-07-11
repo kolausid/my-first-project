@@ -3,14 +3,14 @@ session_start();
 
 if (isset($_SESSION['reg'])) {
     echo $_SESSION['regWelc'], '<br>';
-    echo $_SESSION['status'], '<br>';
+    echo 'Роль: ' . $_SESSION['status'], '<br>';
     if (isset($_SESSION['passw'])) {
         echo 'Пароль сменен <br>';
     }
-    echo $_SESSION['login'], '<br>';
-    echo $_SESSION['name'] . ' ' . $_SESSION['lName'];
+    echo 'Логин: '.  $_SESSION['login'], '<br>';
+    echo 'Имя: '.  $_SESSION['name'], '<br>', 'Фамилия: ' . $_SESSION['lName'];
     echo '<br>';
-    echo 'возраст: ', $_SESSION['hb'], '<br>';
+    echo 'возраст: ' . $_SESSION['hb'], '<br>';
     //unset($_SESSION['reg']);
     ?>
     <a href="day36Account.php">Редактировать</a>
@@ -27,21 +27,27 @@ if (isset($_SESSION['reg'])) {
 
 } elseif (isset($_SESSION['auth'])) {
     echo $_SESSION['welcome'], '<br>';
-    echo $_SESSION['status'], '<br>';
+    echo 'Роль: '.  $_SESSION['status'], '<br>';
     if (isset($_SESSION['passw'])) {
         echo 'Пароль сменен <br>';
     }
-    echo $_SESSION['login'], '<br>';
-    echo $_SESSION['name'] . ' ' . $_SESSION['lName'];
+    echo 'Логин: '.  $_SESSION['login'], '<br>';
+    echo 'Имя: '.  $_SESSION['name'], '<br>', 'Фамилия: ' . $_SESSION['lName'];
     echo '<br>';
-    echo 'возраст: ', $_SESSION['hb'], '<br>';?>
+    echo 'возраст: ', $_SESSION['hb'], '<br><br>';
+    echo 'Для смены имя или фамилии: ';?>
     <a href="day36Account.php">Редактировать</a>
+    <br>
     <a href="day36DeletePr.php">Удалить учетную запись</a>
+    <br>
     <a href="day36ChangePassword.php">Сменить пароль</a>
+    <br>
     <a href="day36Logout.php">Выйти</a>
 <?php
-    if ($_SESSION['status'] != 'user') { ?>
+    if ($_SESSION['status'] != 'user') {
+        echo '<br><br>', 'Список зарегистрированных пользователей: ';?>
         <a href="day36Users.php">Список пользователей</a>
+        <br>
         <a href="day36ProfAdm.php">Админ меню</a>
 
 <?php

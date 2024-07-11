@@ -3,7 +3,8 @@ session_start();
 ?>
 
 <form action="" method="POST">
-    <input name="oldPassword" type="password"
+    <label for="old">Введите старый пароль:</label>
+    <input id="old" name="oldPassword" type="password"
     value="<?= $_POST['oldPassword'] ?? 'password' ?>">
     <input name="newPassword" type="password"
     value="<?= $_POST['newPassword'] ?? 'password' ?>">
