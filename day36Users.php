@@ -1,11 +1,7 @@
 <?php
 session_start();
 ?>
-<!--<form action="" method="GET">
-    <input name="id" value="">
-    <input type="submit">
-</form>
--->
+
 <?php
 require 'day36Connect.php';
 

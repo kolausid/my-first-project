@@ -12,10 +12,14 @@ session_start();
 ?>
 
 <form action="" method="POST">
-    <input name="name" value="<?=$user['name']?>">
-    <input name="lName" value="<?=$user['lName']?>">
+    <label for="name">Введите новое имя:</label>
+    <input id="name" name="name" value="<?=$user['name']?>">
+    <label for="lName">Введите новую фамилию:</label>
+    <input id="lName" name="lName" value="<?=$user['lName']?>">
     <input name="submit" type="submit">
 </form>
+<br><br>
+<a href="day36Profile.php">Профиль</a>
 
 <?php
 if (!empty($_POST['submit'])) {

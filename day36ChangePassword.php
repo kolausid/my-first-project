@@ -6,9 +6,11 @@ session_start();
     <label for="old">Введите старый пароль:</label>
     <input id="old" name="oldPassword" type="password"
     value="<?= $_POST['oldPassword'] ?? 'password' ?>">
-    <input name="newPassword" type="password"
+    <label for="new">Введите новый пароль:</label>
+    <input id="new" name="newPassword" type="password"
     value="<?= $_POST['newPassword'] ?? 'password' ?>">
-    <input name="confirm" value="<?= $_POST['confirm'] ?? ' '?>" type="password">
+    <label for="confirm">Введите еще раз новый пароль:</label>
+    <input id="confirm" name="confirm" value="<?= $_POST['confirm'] ?? ' '?>" type="password">
     <input name="submit" type="submit">
 </form>
 
@@ -51,13 +53,6 @@ if (!empty($_POST['oldPassword']) and
     $newPassword = '';
     echo 'введите старый и новый пароль';
 }
-/*if (!isset($_POST['oldPassword']) and !isset($_POST['newPassword'])) {
-
-    value="<?= $_POST['oldPassword'] ?? '' ?>"
-    value="<?= $_POST['newPassword'] ?? '' ?>"
-} else {
-    echo 'введите старый и новый пароль';
-}*/
 
 
 ?>
