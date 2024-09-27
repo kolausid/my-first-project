@@ -23,8 +23,8 @@ session_start();
 
 <?php
 if (!empty($_POST['submit'])) {
-    $name = $_POST['name'];
-    $lName = $_POST['lName'];
+    $name = strip_tags($_POST['name']);
+    $lName = strip_tags($_POST['lName']);
     $_SESSION['name'] = $name;
     $_SESSION['lName'] = $lName;
     

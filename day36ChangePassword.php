@@ -29,9 +29,9 @@ if (!empty($_POST['oldPassword']) and
     ($_POST['oldPassword'] != 'password' and
     $_POST['newPassword'] != 'password')) {
 
-        $oldPassword = $_POST['oldPassword'];
-        $newPassword = $_POST['newPassword'];
-        $confirmPass = $_POST['confirm'];
+        $oldPassword = strip_tags($_POST['oldPassword']);
+        $newPassword = strip_tags($_POST['newPassword']);
+        $confirmPass = strip_tags($_POST['confirm']);
         if ($newPassword == $confirmPass  and
         ($newPassword != $oldPassword)) {
             if (password_verify($oldPassword, $hash)) {

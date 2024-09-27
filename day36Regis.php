@@ -59,9 +59,9 @@ function validateLogin($login) {
 
 if (!empty($_POST['login']) and 
     !empty($_POST['password']) and !empty($_POST['confirm'])) {
-    $login = $_POST['login'];
-    $email = $_POST['email'];
-    $hb = $_POST['hb'];
+    $login = strip_tags($_POST['login']);
+    $email = strip_tags($_POST['email']);
+    $hb = strip_tags($_POST['hb']);
 
     $years = substr($hb, 0, 4);
     $months = substr($hb, 5, 2);
@@ -79,10 +79,10 @@ if (!empty($_POST['login']) and
                     (strlen($_POST['password']) >= 3 and strlen($_POST['password']) <= 6) and
                     $_POST['password'] == $_POST['confirm']) {
                         //$salt = generateSalt();
-                        $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
-                        $dateReg = date('Y-m-d');
-                        $name = $_POST['name'];
-                        $lName = $_POST['lName'];
+                        $password = strip_tags(password_hash($_POST['password'], PASSWORD_DEFAULT));
+                        $dateReg = strip_tags(date('Y-m-d'));
+                        $name = strip_tags($_POST['name']);
+                        $lName = strip_tags($_POST['lName']);
                         if (isset($_POST['admin'])) {
                             $addUser = "INSERT INTO auth SET
                             login='$login', password='$password',
